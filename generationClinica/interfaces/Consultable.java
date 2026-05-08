@@ -12,5 +12,4 @@ public interface Consultable {
     List<Turno> listarTurnosDelDia(LocalDate fecha);
     List<Turno> buscarPorMedico(Medico medico);
     List<Turno> buscarPorPaciente(Paciente paciente);
-
 }
