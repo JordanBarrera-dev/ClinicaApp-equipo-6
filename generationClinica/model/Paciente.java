@@ -79,7 +79,7 @@ public class Paciente implements Registrable {
 
     @Override
     public String getDatosRegistro() {
-        return "";
+        return toString();
     }
 
     @Override

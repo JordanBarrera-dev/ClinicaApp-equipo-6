@@ -1,4 +1,8 @@
 package generationClinica.model;
 
-public class EstadoTurno {
+public enum EstadoTurno {
+    PENDIENTE,
+    ATENDIDO,
+    CANCELADO,
+
 }
