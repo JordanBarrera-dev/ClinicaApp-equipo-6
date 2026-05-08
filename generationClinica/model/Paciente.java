@@ -89,4 +89,7 @@ public class Paciente implements Registrable {
         }
         return false;
     }
+    public String toString(){
+        return nombre + "" + apellido + "" + "-" + cedula + "" + "-" + telefono;
+    }
 }
