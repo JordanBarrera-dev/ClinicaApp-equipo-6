@@ -89,26 +89,48 @@ public class ClinicaService implements Consultable  {
         JOptionPane.showMessageDialog(null, mostrarPacientes);
     }
     public void registrarMedico(Medico m){
-        if(!p.esValido()){
+        if(!m.esValido()){
             JOptionPane.showMessageDialog(null, "Error");
             return;
         }
-        if (pacientes.contains(p))  {
-            JOptionPane.showMessageDialog(null, "El paciente ya fue registrado");
+        if (medicos.contains(m))  {
+            JOptionPane.showMessageDialog(null, "El medico ya fue registrado");
             return;
         }
         int id_nuevo = 1;
-        for (Paciente paciente : pacientes)
+        for (Medico medico : medicos)
         {
-            if (paciente.getId() >= id_nuevo)
+            if (medico.getId() >= id_nuevo)
             {
-                id_nuevo = paciente.getId() + 1;
+                id_nuevo = medico.getId() + 1;
             }
         }
-        p.setId(id_nuevo);
-        pacientes.add(p);
-        JOptionPane.showMessageDialog(null, "Paciente registrado correctamente");
-        JOptionPane.showMessageDialog(null, p.getDatosRegistro());
+        m.setId(id_nuevo);
+        medicos.add(m);
+        JOptionPane.showMessageDialog(null, "Medico registrado correctamente");
+        JOptionPane.showMessageDialog(null, m.getDatosRegistro());
+    }
+    public Medico buscarPorNombreApellido(String nombre, String apellido){
+        for (Medico medico : medicos){
+            if (medico.getNombre().equalsIgnoreCase(nombre) && medico.getApellido().equalsIgnoreCase(apellido) ){
+                return medico;
+            }
+            ;
+        }
+        return null;
+    }
+    public void listarMedicos(){
+        if(medicos.isEmpty()){
+            JOptionPane.showMessageDialog(null, "no hay medicos en la lista");
+            return;
+        }
+        List<Medico> copiaOrdenada = new ArrayList<>(medicos);
+        copiaOrdenada.sort(Comparator.comparing(Medico::getEspecialidad).thenComparing(Medico::getApellido));
+        String mostrarMedicos = "";
+        for(Medico medico : copiaOrdenada){
+            mostrarMedicos += medico + "\n";
+        }
+        JOptionPane.showMessageDialog(null, mostrarMedicos);
     }
 
 }
