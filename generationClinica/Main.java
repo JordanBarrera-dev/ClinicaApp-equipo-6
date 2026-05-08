@@ -1,5 +1,6 @@
 package generationClinica;
 
+
 import javax.swing.*;
 
 public class Main
@@ -16,7 +17,7 @@ public class Main
 
             switch (numeroOpcion)
             {
-                case "1": break;
+                case "1": registroPaciente(); break;
                 case "2": break;
                 case "3": break;
                 case "4": break;
@@ -26,11 +27,15 @@ public class Main
                 case "8": break;
                 case "9": break;
                 case "10": break;
-                case "0": JOptionPane.showMessageDialog(null,
-                        "Gracias por usar el programa"); break;
+                case "0":
+                    JOptionPane.showMessageDialog(null,
+                            "Gracias por usar el programa");
+                    break;
 
-                default: JOptionPane.showMessageDialog(null,
-                        "OPCIÓN INVALIDA"); break;
+                default:
+                    JOptionPane.showMessageDialog(null,
+                            "OPCIÓN INVALIDA");
+                    break;
             }
 
         } while (!numeroOpcion.equals("0"));
@@ -40,25 +45,32 @@ public class Main
     {
         return JOptionPane.showInputDialog(
                 """                
-                =============================
-                     CLINICAAPP MENU
-                =============================
-
-                 1. Registrar paciente
-                 2. Registrar medico
-                 3. Asignar turno
-                 4. Listar turnos del dia
-                 5. Cancelar turno
-                 6. Ver turnos por medico
-                 7. Ver turnos por paciente
-                 8. Cambiar estado turno
-                 9. Listar pacientes
-                10. Listar medicos
-
-                 0. Salir
-                ===============================
-                
-                 Digite el numero de la opción:
-                """);
+                        =============================
+                             CLINICAAPP MENU
+                        =============================
+                        
+                         1. Registrar paciente
+                         2. Registrar medico
+                         3. Asignar turno
+                         4. Listar turnos del dia
+                         5. Cancelar turno
+                         6. Ver turnos por medico
+                         7. Ver turnos por paciente
+                         8. Cambiar estado turno
+                         9. Listar pacientes
+                        10. Listar medicos
+                        
+                         0. Salir
+                        ===============================
+                        
+                         Digite el numero de la opción:
+                        """);
     }
+
+    public static void registroPaciente()
+    {
+
+    }
+
 }
+
