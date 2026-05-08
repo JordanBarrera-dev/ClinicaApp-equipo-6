@@ -92,4 +92,13 @@ public class Paciente implements Registrable {
     public String toString(){
         return nombre + "" + apellido + "" + "-" + cedula + "" + "-" + telefono;
     }
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj) return true;
+        if (!(obj instanceof Paciente)) return false;
+
+        Paciente otro = (Paciente) obj;
+        return cedula.equals(otro.cedula);
+    }
 }
